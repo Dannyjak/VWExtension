@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const formData = new FormData();
         formData.append('file', selectedFile);
 
-        fetch('http://localhost:8003/run-script', {
+        fetch('http://97.70.236.220:8082/', {
             method: 'POST',
             body: formData,
             headers: {
