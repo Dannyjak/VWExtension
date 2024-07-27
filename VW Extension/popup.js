@@ -1,3 +1,6 @@
+
+
+
 document.addEventListener('DOMContentLoaded', function() {
     const fileInput = document.getElementById('fileInput');
     const autofillBtn = document.getElementById("autofillBtn");
@@ -38,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const formData = new FormData();
         formData.append('file', selectedFile);
 
-        fetch('http://97.70.236.220:8082/', {
+        fetch('http://97.70.236.220:8082/run-script', {
             method: 'POST',
             body: formData,
             headers: {
@@ -66,6 +69,20 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // function sendResponseToContentScript(response) {
+    //     chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
+    //         const activeTab = tabs[0];
+    //         chrome.tabs.sendMessage(activeTab.id, { action: 'autofillData', data: response }, (response) => {
+    //             if (chrome.runtime.lastError) {
+    //                 console.error('Error:', chrome.runtime.lastError.message);
+    //             } else {
+    //                 console.log('Message sent to content script.');
+    //             }
+    //         });
+    //     });
+    // }
+    
+
     function sendResponseToContentScript(response) {
         chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
             const activeTab = tabs[0];
@@ -79,7 +96,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     if (chrome.runtime.lastError) {
                         console.error('Error:', chrome.runtime.lastError.message);
                     } else {
-                        console.log('Content script executed successfully.');
+                        console.log('Content script executed successfully TEST.');
                     }
                 }
             );
