@@ -96,21 +96,28 @@ function autofillData(data) {
 
         { id: 'patientId', value: parsedData.patientId },
         { id: 'name', value: parsedData.name },
+        { id: 'age', value: parsedData.age },
         { id: 'species', value: parsedData.species },
         { id: 'breed', value: parsedData.breed },
-        { id: 'ageyears', value: parsedData.ageyears },
-        { id: 'agemonths', value: parsedData.agemonths },
         { id: 'gender', value: parsedData.gender },
         { id: 'color', value: parsedData.color },
         { id: 'microchipId', value: parsedData.microchipId },
+        { id: 'intakeType', value: parsedData.intakeType },
+        { id: 'location', value: parsedData.location },
         { id: 'ownerName', value: parsedData.ownerName },
         { id: 'contactNumber', value: parsedData.contactNumber },
         { id: 'address', value: parsedData.address },
         { id: 'email', value: parsedData.email },
+        { id: 'weight', value: parsedData.weight },
+        { id: 'updatedAge', value: parsedData.updatedAge },
+        { id: 'bodyScore', value: parsedData.bodyScore },
+        { id: 'dental', value: parsedData.dental },
         { id: 'condition', value: parsedData.condition },
         { id: 'dateDiagnosed', value: parsedData.dateDiagnosed },
         { id: 'treatment', value: parsedData.treatment },
-        { id: 'outcome', value: parsedData.outcome }
+        { id: 'outcome', value: parsedData.outcome },
+        { id: 'notes', value: parsedData.notes }
+        
        // { id: 'outcome', value: parsedData.outcome } new for vaccine
 
     ];
@@ -126,4 +133,4 @@ function autofillData(data) {
     });
 }
   
-  
+   
