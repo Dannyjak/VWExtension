@@ -113,23 +113,29 @@ document.addEventListener('DOMContentLoaded', function() {
             // 'Address': 'address',
             // 'Phone': 'phone'
 
-            'Patient ID': 'patientId',
+            'Patient Id': 'patientId',
             'Name': 'name',
+            'Age': 'age',
             'Species': 'species',
             'Breed': 'breed',
-            'Age/DOB Years': 'ageyears',
-            'Age/DOB Months': 'agemonths',
             'Gender': 'gender',
             'Color/Markings': 'color',
             'Microchip ID': 'microchipId',
+            'Intake Type': 'intakeType',
+            'Location': 'location',
             'Owner Name': 'ownerName',
             'Contact Number': 'contactNumber',
             'Address': 'address',
             'Email': 'email',
+            'Weight': 'weight',
+            'Updated Age': 'updatedAge',
+            'Body Score': 'bodyScore',
+            'Dental': 'dental',
             'Condition': 'condition',
             'Date Diagnosed': 'dateDiagnosed',
             'Treatment Provided': 'treatment',
-            'Outcome/Current Status': 'outcome'
+            'Outcome/Current Status': 'outcome',
+            'Treatments - Notes': 'notes'
 
         };
 
@@ -138,13 +144,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const fields = {};
 
-        lines.forEach(line => {
-            for (const key in fieldMap) {
-                if (line.startsWith(key)) {
-                    fields[fieldMap[key]] = line.split(':')[1].trim();
-                }
+        for (const key in fieldMap) {
+            const regex = new RegExp(`.*${key}:\\s*(.*).*`, 'i');  // Case insensitive match, allowing any characters before and after the key
+            const match = data.match(regex);
+            if (match) {
+                fields[fieldMap[key]] = match[1].trim();
             }
-        });
+        }
 
         console.log('Extracted fields:', fields);
 
